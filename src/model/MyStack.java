@@ -41,4 +41,15 @@ public class MyStack<T> {
 			throw new Error("Not enough memory to increase size!");
 		}
 	}
+	public T pop() {
+		if (!isEmpty()) {
+			length--;
+			MyNodeS<T> oldtop = topNode;
+			topNode = topNode.getNext();
+			return oldtop.getValue();
+		}
+		else {
+			throw new Error("Cannot pop from empty!");
+		}
+	}
 }
