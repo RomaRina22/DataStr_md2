@@ -21,4 +21,18 @@ public class MyDeque<T> {
 	public int getLength() {
 		return length;
 	}
+	public void enqueueAtFront(T value) {
+		if (!isFull()) {
+			MyNodeQ<T> newnode = new MyNodeQ<>(value);
+			newnode.setPrevious(frontNode);
+			frontNode = newnode;
+			if (rearNode==null) {
+				rearNode=frontNode;
+			}
+			length++;
+		}
+		else {
+			throw new Error("Not enough memory to add new element");
+		}
+	}
 }
