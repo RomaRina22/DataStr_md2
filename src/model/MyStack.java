@@ -76,5 +76,6 @@ public class MyStack<T> {
 	public void clear() {
 		topNode = null;
 		length = 0;
+		Runtime.getRuntime().gc();
 	}
 }
