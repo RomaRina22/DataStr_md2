@@ -66,4 +66,21 @@ public class MyDeque<T> {
 			throw new Error("Cannot dequeue from empty deque");
 		}
 	}
+	public T dequeueFromEnd() {
+		if (!isEmpty()) {
+			MyNodeQ<T> oldrear = rearNode;
+			rearNode = rearNode.getNext();
+			if (rearNode != null) {
+				rearNode.setPrevious(null);
+			}
+			else {
+				frontNode = null;
+			}
+			length--;
+			return oldrear.getValue();
+		}
+		else {
+			throw new Error("Cannot dequeue from empty deque");
+		}
+	}
 }
