@@ -22,4 +22,8 @@ public class MyStack<T> {
 		return (Runtime.getRuntime().freeMemory() > MEMORY_TRESHOLD);
 	}
 	
+	public boolean isEmpty() {
+		return (length == 0);
+	}
+	
 }
