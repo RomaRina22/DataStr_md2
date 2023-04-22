@@ -83,4 +83,31 @@ public class MyDeque<T> {
 			throw new Error("Cannot dequeue from empty deque");
 		}
 	}
+	
+	public void print(boolean RearToFront) {
+		String values = "";
+		if (RearToFront) {
+			MyNodeQ<T> iterator = rearNode;
+			if (iterator != null) { //first step of loop without comma
+				values += iterator.toString();
+				iterator = iterator.getNext();
+			}
+			while (iterator != null) {
+				values += ", "+iterator.toString();
+				iterator = iterator.getNext();
+			}
+		}
+		else {
+			MyNodeQ<T> iterator = frontNode;
+			if (iterator != null) { //first step of loop without comma
+				values += iterator.toString();
+				iterator = iterator.getPrevious();
+			}
+			while (iterator != null) {
+				values += ", "+iterator.toString();
+				iterator = iterator.getPrevious();
+			}
+		}
+		System.out.println("Queue =["+values+"]");
+	}
 }
