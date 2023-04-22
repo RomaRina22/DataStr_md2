@@ -26,4 +26,19 @@ public class MyStack<T> {
 		return (length == 0);
 	}
 	
+	public int getLength() {
+		return length;
+	}
+	
+	public void push(T value) {
+		if (!isFull()) {
+			MyNodeS<T> newNode = new MyNodeS<T>(value);
+			newNode.setNext(topNode);
+			length++;
+			topNode = newNode;
+		}
+		else {
+			throw new Error("Not enough memory to increase size!");
+		}
+	}
 }
