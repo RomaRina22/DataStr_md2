@@ -16,7 +16,7 @@ public class MyNodeQ<T> {
 	public void setNext(MyNodeQ<T> next) {
 		if (next != null) {
 			next.previous = this;
-			
+			this.next = next;
 		}
 		else {
 			this.next = null;
@@ -27,7 +27,13 @@ public class MyNodeQ<T> {
 		return previous;
 	}
 	public void setPrevious(MyNodeQ<T> previous) {
-		this.previous = previous;
+		if (previous != null) {
+			previous.next = this;
+			this.previous = previous;
+		}
+		else {
+			this.next = null;
+		}
 	}
 	public MyNodeQ(T value) {
 		super();
