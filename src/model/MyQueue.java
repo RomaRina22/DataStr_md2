@@ -25,7 +25,7 @@ public class MyQueue<T> {
 	public void enqueue(T value) {
 		if (!isFull()) {
 			MyNodeQ<T> newnode = new MyNodeQ<T>(value);
-			rearNode.setPrevious(newnode);
+			newnode.setNext(rearNode);
 			rearNode = newnode;
 			length++;
 		}
@@ -33,4 +33,9 @@ public class MyQueue<T> {
 			throw new Error("Not enough space to enqueue");
 		}
 	}
+	/*public T dequeue() {
+		if (!isEmpty()) {
+			//MyNodeQ
+		}
+	}*/
 }
