@@ -6,4 +6,9 @@ public class MyDeque<T> {
 	private int length;
 	private final int MEMORY_TRESHOLD = 10; //for isfull
 	
+	public MyDeque() {
+		frontNode = null;
+		rearNode = null;
+		length = 0;
+	}
 }
