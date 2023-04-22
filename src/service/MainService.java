@@ -1,5 +1,7 @@
 package service;
 
+import java.util.Scanner;
+
 import model.MyQueue;
 
 public class MainService {
@@ -18,6 +20,20 @@ public class MainService {
 		que.enqueue(5);
 		que.enqueue(5);
 		System.out.println(Runtime.getRuntime().freeMemory());
+		que.print();
+		System.out.println(Runtime.getRuntime().freeMemory());
+		Scanner myscan = new Scanner(System.in);
+		while (true) {
+			int newint = myscan.nextInt();
+			if (newint == 0) break;
+			else {
+				que.enqueue(newint);
+				que.print();
+				System.out.println(Runtime.getRuntime().freeMemory());
+			}
+			
+		}
+		myscan.close();
 	}
 
 }
