@@ -60,4 +60,17 @@ public class MyStack<T> {
 			return null;
 		}
 	}
+	public void print() {
+		MyNodeS<T> iterator = topNode;
+		String values = "";
+		if (iterator != null) { //first step of loop without comma
+			values += iterator.toString();
+			iterator = iterator.getNext();
+		}
+		while (iterator != null) {
+			values += ", "+iterator.toString();
+			iterator = iterator.getNext();
+		}
+		System.out.println("Stack =["+values+"]");
+	}
 }
