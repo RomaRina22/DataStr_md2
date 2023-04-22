@@ -28,14 +28,29 @@ public class MyQueue<T> {
 			newnode.setNext(rearNode);
 			rearNode = newnode;
 			length++;
+			if (frontNode == null) {
+				frontNode = rearNode;
+			}
 		}
 		else {
 			throw new Error("Not enough space to enqueue");
 		}
 	}
-	/*public T dequeue() {
+	public T dequeue() {
 		if (!isEmpty()) {
-			//MyNodeQ
+			MyNodeQ<T> oldfront= frontNode;
+			frontNode = frontNode.getPrevious();
+			if (frontNode != null) {
+				frontNode.setNext(null);
+			}
+			else {
+				rearNode = null;
+			}
+			length--;
+			return oldfront.getValue();
 		}
-	}*/
+		else {
+			throw new Error("Queue is already empty!");
+		}
+	}
 }
