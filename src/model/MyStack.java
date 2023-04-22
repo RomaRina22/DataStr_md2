@@ -3,7 +3,7 @@ package model;
 public class MyStack<T> {
 	private MyNodeS<T> topNode;
 	private int length;
-	private final int MAX_SIZE = 100000;
+	//private final int MAX_SIZE = 100000;
 	
 	public MyStack() {
 		super();
