@@ -49,4 +49,21 @@ public class MyDeque<T> {
 			throw new Error("Not enough memory to add new element");
 		}
 	}
+	public T dequeueFromFront() {
+		if (!isEmpty()) {
+			MyNodeQ<T> oldfront = frontNode;
+			frontNode = frontNode.getPrevious();
+			if (frontNode != null) {
+				frontNode.setNext(null);
+			}
+			else {
+				rearNode = null;
+			}
+			length--;
+			return oldfront.getValue();
+		}
+		else {
+			throw new Error("Cannot dequeue from empty deque");
+		}
+	}
 }
