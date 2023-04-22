@@ -110,4 +110,10 @@ public class MyDeque<T> {
 		}
 		System.out.println("Queue =["+values+"]");
 	}
+	public void clear() {
+		frontNode = null;
+		rearNode = null;
+		length = 0;
+		Runtime.getRuntime().gc();
+	}
 }
