@@ -52,4 +52,12 @@ public class MyStack<T> {
 			throw new Error("Cannot pop from empty!");
 		}
 	}
+	public T top() {
+		if (topNode!=null) {
+			return topNode.getValue();
+		}
+		else {
+			return null;
+		}
+	}
 }
