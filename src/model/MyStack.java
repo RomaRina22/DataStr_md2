@@ -73,4 +73,8 @@ public class MyStack<T> {
 		}
 		System.out.println("Stack =["+values+"]");
 	}
+	public void clear() {
+		topNode = null;
+		length = 0;
+	}
 }
