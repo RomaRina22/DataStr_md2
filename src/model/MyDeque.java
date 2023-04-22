@@ -11,4 +11,14 @@ public class MyDeque<T> {
 		rearNode = null;
 		length = 0;
 	}
+	public boolean isFull() {
+		//System.out.println("running isfull "+ Runtime.getRuntime().freeMemory());
+		return (Runtime.getRuntime().freeMemory() < MEMORY_TRESHOLD);
+	}
+	public boolean isEmpty() {
+		return (length == 0);
+	}
+	public int getLength() {
+		return length;
+	}
 }
