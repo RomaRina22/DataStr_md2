@@ -53,4 +53,17 @@ public class MyQueue<T> {
 			throw new Error("Queue is already empty!");
 		}
 	}
+	public void print() {
+		MyNodeQ<T> iterator = rearNode;
+		String values = "";
+		if (iterator != null) { //first step of loop without comma
+			values += iterator.toString();
+			iterator = iterator.getNext();
+		}
+		while (iterator != null) {
+			values += ", "+iterator.toString();
+			iterator = iterator.getNext();
+		}
+		System.out.println("Queue =["+values+"]");
+	}
 }
