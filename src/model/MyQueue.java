@@ -18,4 +18,7 @@ public class MyQueue<T> {
 	public boolean isEmpty() {
 		return (length == 0);
 	}
+	public int getLength() {
+		return length;
+	}
 }
