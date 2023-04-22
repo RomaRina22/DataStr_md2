@@ -3,6 +3,7 @@ package model;
 public class MyStack<T> {
 	private MyNodeS<T> topNode;
 	private int length;
+	private final int MEMORY_TRESHOLD = 10;
 	//private final int MAX_SIZE = 100000;
 	
 	public MyStack() {
@@ -18,8 +19,8 @@ public class MyStack<T> {
 		else {
 			return true;
 		}*/
-		final int MEMORY_TRESHOLD = 10;
-		return (Runtime.getRuntime().freeMemory() > MEMORY_TRESHOLD);
+		
+		return (Runtime.getRuntime().freeMemory() < MEMORY_TRESHOLD);
 	}
 	
 	public boolean isEmpty() {

@@ -13,7 +13,8 @@ public class MyQueue<T> {
 	}
 	
 	public boolean isFull() {
-		return (Runtime.getRuntime().freeMemory() > MEMORY_TRESHOLD);
+		//System.out.println("running isfull "+ Runtime.getRuntime().freeMemory());
+		return (Runtime.getRuntime().freeMemory() < MEMORY_TRESHOLD);
 	}
 	public boolean isEmpty() {
 		return (length == 0);
@@ -33,6 +34,7 @@ public class MyQueue<T> {
 			}
 		}
 		else {
+			System.out.println(Runtime.getRuntime().freeMemory());
 			throw new Error("Not enough space to enqueue");
 		}
 	}
