@@ -35,4 +35,18 @@ public class MyDeque<T> {
 			throw new Error("Not enough memory to add new element");
 		}
 	}
+	public void enqueueAtEnd(T value) {
+		if (!isFull()) {
+			MyNodeQ<T> newnode = new MyNodeQ<>(value);
+			newnode.setNext(rearNode);
+			rearNode = newnode;
+			if (frontNode==null) {
+				frontNode=rearNode;
+			}
+			length++;
+		}
+		else {
+			throw new Error("Not enough memory to add new element");
+		}
+	}
 }
