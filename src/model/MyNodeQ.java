@@ -2,25 +2,28 @@ package model;
 
 public class MyNodeQ<T> {
 	private T value;
-	private MyNodeS<T> next;
-	private MyNodeS<T> previous;
+	private MyNodeQ<T> next;
+	private MyNodeQ<T> previous;
 	public T getValue() {
 		return value;
 	}
 	public void setValue(T value) {
 		this.value = value;
 	}
-	public MyNodeS<T> getNext() {
+	public MyNodeQ<T> getNext() {
 		return next;
 	}
 	public void setNext(MyNodeQ<T> next) {
 		if (next != null) {
+			next.previous = this;
 			
 		}
-		this.next = next;
+		else {
+			this.next = null;
+		}
 	}
 	
-	public MyNodeS<T> getPrevious() {
+	public MyNodeQ<T> getPrevious() {
 		return previous;
 	}
 	public void setPrevious(MyNodeQ<T> previous) {
